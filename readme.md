@@ -13,3 +13,7 @@ Eksempel av payload:
     "productGroup": "hus",
     "product": "innbo"
 }
+  
+Fagsystem er også implementert her:
+https://github.com/Dipsy88/subject_system
+Kjøre både applikasjoner sammen. 

@@ -29,8 +29,6 @@ public class ApplicantServiceImpl implements ApplicantService {
     private PropertiesConfiguration propertiesConfiguration;
 
 
-
-
     @Override
     public AgreementOutput createAgreement(final ApplicantInput applicantInput) {
         if(!isApplicantInputValid(applicantInput)){
@@ -45,8 +43,9 @@ public class ApplicantServiceImpl implements ApplicantService {
         AgreementInput agreementInput = new AgreementInput(customerId, applicantInput.getProductGroup(), applicantInput.getProduct());
         long agreementId = createAgreement(agreementInput, client);
 
-        String status = sendLetter(applicantInput, client);
-        checkStatus(status);
+        // Brevtjeneste er ikke implementert
+        // String status = sendLetter(applicantInput, client);
+       // checkStatus(status);
 
         updateAgreementStatus(AgreementStatus.SEND, client, agreementId);
         return new AgreementOutput(agreementId, AgreementStatus.SEND.name());
